@@ -44,7 +44,7 @@ In this project I managed to improve my knowledge in javascript, I learned new c
 
 ## 📲 Links
 
-- Live Site URL: https://merry-granita-7bb547.netlify.app/
+- Live Site URL: https://transcendent-vacherin-3b26ce.netlify.app/
 
 ---
 
