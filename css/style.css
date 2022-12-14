@@ -1,0 +1,145 @@
+@import url(/css/keyframes.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff--primary: 'Roboto', sans-serif;
+    --bc-primary: #E1E1E6;
+    --fc-primary: #29292E;
+    --imgc-primary: #323238;
+
+    font-size: 62.5%;
+}
+
+.hide {
+    display: none;
+    
+}
+
+body {
+    display: grid;
+    min-height: 50vh;
+    color: var(--fc-primary);
+    margin-top: 16.0rem;
+}
+
+main {
+    justify-self: center;
+    align-self: end;
+    display: flex;
+}
+
+.timer {
+    font-family: var(--ff--primary);
+    font-size: 14.6rem;
+    
+    margin: 6.0rem 19.2rem 0 0;
+    
+    display: flex;
+    
+    animation: timerAnimation 200ms 550ms backwards;
+
+}
+
+#controls button {
+    border: none;
+    background-color: transparent;
+
+    margin-left: 5.3rem;
+    
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: buttonsAnimation 400ms 850ms backwards;
+}
+
+#controls button:first-child {
+    margin-left: 0rem;
+}
+
+.btn-sounds {
+    max-width: 350px;
+}
+
+.btn-sounds button{
+    width: 14.2rem;
+    height: 16.2rem;
+
+    margin: 10px 10px 10px 10px;    
+    
+    border-radius: 2.5em;
+    border: none;
+    background-color: var(--bc-primary);
+
+    cursor: pointer;
+    transition: all 0.2s;
+
+    animation: SoundAnimation 200ms 550ms backwards;
+}
+
+.btn-sounds button:hover,
+#controls button:hover {
+    transform: scale(1.1);
+}
+
+.btn-sounds .tree {
+    background-color: #029d62;
+}
+
+.btn-sounds .cloud {
+    background-color: #02799D;
+}
+
+.btn-sounds .market {
+    background-color: #c0ce43;
+}
+
+.btn-sounds .fire {
+    background-color: #9d0202;
+}
+
+.btn-sounds .path path {
+    fill: white;
+}
+
+ .sound-on,
+ .sound-off {
+   border: none;
+   background-color: transparent;
+   position: absolute;
+   bottom: 50px;
+   right: 150px;
+   cursor: pointer;
+}
+
+.sound-on path,
+.sound-off path {
+    fill: #29292E;
+    transition: all 0.2s;
+
+    animation: SoundAnimation 200ms 550ms backwards;
+} 
+
+
+@media (max-width: 930px) {    
+    body {
+        min-height: 70vh;
+    }
+
+    main {
+        display: grid;
+        margin-left: 200px;
+    }
+
+    .btn-sounds {
+        margin-top: 6.0rem;
+        max-width: 450px;
+    }
+
+    .btn-sounds button {
+        margin-left: 25px;
+    }
+}
