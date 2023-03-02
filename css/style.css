@@ -11,7 +11,7 @@
     --bc-primary: #E1E1E6;
     --fc-primary: #29292E;
     --imgc-primary: #323238;
-
+    
     font-size: 62.5%;
 }
 
@@ -35,22 +35,16 @@ main {
 
 .timer {
     font-family: var(--ff--primary);
-    font-size: 14.6rem;
-    
+    font-size: 14.6rem;    
     margin: 6.0rem 19.2rem 0 0;
-    
     display: flex;
-    
     animation: timerAnimation 200ms 550ms backwards;
-
 }
 
 #controls button {
     border: none;
     background-color: transparent;
-
     margin-left: 5.3rem;
-    
     cursor: pointer;
     transition: all 0.3s;
     animation: buttonsAnimation 400ms 850ms backwards;
@@ -67,16 +61,12 @@ main {
 .btn-sounds button{
     width: 14.2rem;
     height: 16.2rem;
-
     margin: 10px 10px 10px 10px;    
-    
     border-radius: 2.5em;
     border: none;
     background-color: var(--bc-primary);
-
     cursor: pointer;
     transition: all 0.2s;
-
     animation: SoundAnimation 200ms 550ms backwards;
 }
 
@@ -105,23 +95,107 @@ main {
     fill: white;
 }
 
- .sound-on,
- .sound-off {
-   border: none;
-   background-color: transparent;
-   position: absolute;
-   bottom: 50px;
-   right: 150px;
-   cursor: pointer;
+.rangeControl {
+    appearance: none;
+    background: #323238;
+    outline: none;
+    width: 80%;
+    height: 5px;
+    border-radius: 9px;
+    margin-top: 30px;
+    
 }
 
-.sound-on path,
-.sound-off path {
-    fill: #29292E;
-    transition: all 0.2s;
+.rangeControl::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%; 
+    background: #323238;
+    cursor: pointer;
+}
 
-    animation: SoundAnimation 200ms 550ms backwards;
-} 
+.rangeControl-tree {
+    appearance: none;
+    background: #ffffff;
+    outline: none;
+    width: 80%;
+    height: 5px;
+    border-radius: 9px;
+    margin-top: 30px;
+}
+
+.rangeControl-cloud {
+    appearance: none;
+    background: #ffffff;
+    outline: none;
+    width: 80%;
+    height: 5px;
+    border-radius: 9px;
+    margin-top: 30px;
+}
+
+.rangeControl-fire {
+    appearance: none;
+    background: #ffffff;
+    outline: none;
+    width: 80%;
+    height: 5px;
+    border-radius: 9px;
+    margin-top: 30px;
+}
+
+.rangeControl-market {
+    appearance: none;
+    background: #ffffff;
+    outline: none;
+    width: 80%;
+    height: 5px;
+    border-radius: 9px;
+    margin-top: 30px;
+}
+
+.rangeControl-tree::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%; 
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.rangeControl-cloud::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%; 
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.rangeControl-fire::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%; 
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.rangeControl-market::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%; 
+    background: #ffffff;
+    cursor: pointer;
+}
+
 
 
 @media (max-width: 930px) {    

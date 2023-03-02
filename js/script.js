@@ -1,3 +1,5 @@
+import * as controlFunctions from "./classListsControl.js"
+import { controlVolume } from "./controlVolume.js"
 import { elements } from "./elements.js"
 
 const {
@@ -11,52 +13,50 @@ const {
     btnPause,
     minutesDisplay,
     secondsDisplay,
-    soundForest,
-    soundCloud,
-    soundMarket,
-    soundFire,
-    soundOn,
-    soundOff
+    rangeControl,
+    inputTree,
+    inputCloud,
+    inputMarket,
+    inputFire
+
 } = elements
+
+const {
+    changeCloud,
+    changeFire,
+    changeMarket,
+    changeTree
+
+} = controlVolume
 
 let seconds = Number(secondsDisplay.textContent)
 let minutes = Number(minutesDisplay.textContent)
 let timerControl
 
-btnPlay.addEventListener('click', coutDown)
+btnPause.addEventListener('click', () => clearTimeout(timerControl))
 
 btnAnyLess.addEventListener('click', decrementerMinutes)
 
 btnMost.addEventListener('click',  updateMinutes)
 
-cardMarket.addEventListener('click', clickMarket)
+btnPlay.addEventListener('click', coutDown)
 
-soundOn.addEventListener('click', controlSounds)
+cardMarket.addEventListener('click', controlFunctions.clickMarket)
 
-cardCloud.addEventListener('click', clickCloud)
+cardCloud.addEventListener('click', controlFunctions.clickCloud)
 
-cardTree.addEventListener('click', clickTree)
+cardTree.addEventListener('click', controlFunctions.clickTree)
 
-cardFire.addEventListener('click', clickFire)
+cardFire.addEventListener('click', controlFunctions.clickFire)
 
+inputTree.addEventListener('change', changeTree) 
 
-function controlSounds() {
-    soundOn.classList.add('hide')
-    soundOff.classList.remove('hide')
-    cardTree.classList.remove('tree')
-    cardTree.classList.remove('path')
-    cardCloud.classList.remove('cloud')
-    cardCloud.classList.remove('path')
-    cardMarket.classList.remove('market')
-    cardMarket.classList.remove('path')
-    cardFire.classList.remove('fire')
-    cardFire.classList.remove('path')
-    soundMarket.pause()
-    soundCloud.pause()
-    soundFire.pause()
-    soundForest.pause()
+inputFire.addEventListener('change', changeFire)
 
-}
+inputCloud.addEventListener('change', changeCloud)
+
+inputMarket.addEventListener('change', changeMarket)
+
 
 function updateMinutes() {
     minutes += 5
@@ -93,77 +93,3 @@ function coutDown() {
        }, 1000);
 }
 
-
-btnPause.addEventListener('click', () => {
-    clearTimeout(timerControl)
-})
-
-
-function clickTree() {
-    cardTree.classList.add('tree')
-    cardTree.classList.add('path')
-    cardCloud.classList.remove('cloud')
-    cardCloud.classList.remove('path')
-    cardMarket.classList.remove('market')
-    cardMarket.classList.remove('path')
-    cardFire.classList.remove('fire')
-    cardFire.classList.remove('path')
-    soundOff.classList.add('hide')
-    soundOn.classList.remove('hide')
-    soundForest.play()
-    soundMarket.pause()
-    soundCloud.pause()
-    soundFire.pause()
-}
-
-function clickCloud() {
-    cardCloud.classList.add('cloud')
-    cardCloud.classList.add('path')
-    cardTree.classList.remove('tree')
-    cardTree.classList.remove('path')
-    cardMarket.classList.remove('market')
-    cardMarket.classList.remove('path')
-    cardFire.classList.remove('fire')
-    cardFire.classList.remove('path')
-    soundOff.classList.add('hide')
-    soundOn.classList.remove('hide')
-    soundCloud.play()
-    soundForest.pause()
-    soundMarket.pause()
-    soundFire.pause()
-}
-
-function clickMarket() {
-    cardMarket.classList.add('market')
-    cardMarket.classList.add('path')
-    cardTree.classList.remove('tree')
-    cardTree.classList.remove('path')
-    cardCloud.classList.remove('cloud')
-    cardCloud.classList.remove('path')
-    cardFire.classList.remove('fire')
-    cardFire.classList.remove('path')
-    soundOff.classList.add('hide')
-    soundOn.classList.remove('hide')
-    soundMarket.play()
-    soundForest.pause()
-    soundCloud.pause()
-    soundFire.pause()
-    
-}
-
-function clickFire() {
-    cardFire.classList.add('fire')
-    cardFire.classList.add('path')
-    cardTree.classList.remove('tree')
-    cardTree.classList.remove('path')
-    cardCloud.classList.remove('cloud')
-    cardCloud.classList.remove('path')
-    cardMarket.classList.remove('market')
-    cardMarket.classList.remove('path')
-    soundOff.classList.add('hide')
-    soundOn.classList.remove('hide')
-    soundFire.play()
-    soundCloud.pause()
-    soundForest.pause()
-    soundMarket.pause()
-}
