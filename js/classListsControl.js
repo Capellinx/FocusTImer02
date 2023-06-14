@@ -14,8 +14,56 @@ const {
     inputTree,
     inputFire,
     inputMarket,
-    rangeControl
+    rangeControl,
+    dark,
+    body,
+    treeDark,
+    svgPlay,
+    svgPause,
+    svgMost,
+    svgAnyLess,
+    svgDark,
+    cloudDark,
+    marketDark,
+    fireDark,
+    svgTree,
+    svgCloud,
+    svgMarket,
+    svgFire,
+    rangeControlTree,
+    rangeControlCloud,
+    rangeControlMarket,
+    rangeControlFire
 } = elements
+
+dark.addEventListener('click', darkMode)
+
+
+function darkMode() {
+    body.classList.toggle('background-dark')
+    treeDark.classList.toggle('darkButton')
+    cloudDark.classList.toggle('darkButton')
+    marketDark.classList.toggle('darkButton')
+    fireDark.classList.toggle('darkButton')
+    svgDark.classList.toggle('fillColor')
+    svgPlay.classList.toggle('fillColor')
+    svgPause.classList.toggle('fillColor')
+    svgMost.classList.toggle('fillColor')
+    svgAnyLess.classList.toggle('fillColor')
+    svgTree.classList.toggle('fillColor')
+    svgCloud.classList.toggle('fillColor')
+    svgMarket.classList.toggle('fillColor')
+    svgFire.classList.toggle('fillColor')
+    inputTree.classList.toggle('backgroundRangeControlWhite')
+    inputCloud.classList.toggle('backgroundRangeControlWhite')
+    inputFire.classList.toggle('backgroundRangeControlWhite')
+    inputMarket.classList.toggle('backgroundRangeControlWhite')
+    rangeControlTree.classList.toggle('backgroundRangeControl')
+    rangeControlCloud.classList.toggle('backgroundRangeControl')
+    rangeControlMarket.classList.toggle('backgroundRangeControl')
+    rangeControlFire.classList.toggle('backgroundRangeControl')
+}
+
     
 function clickTree() {
     cardTree.classList.add('tree')

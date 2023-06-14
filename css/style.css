@@ -17,7 +17,10 @@
 
 .hide {
     display: none;
-    
+}
+
+.dark {
+    cursor: pointer;
 }
 
 body {
@@ -64,7 +67,7 @@ main {
     margin: 10px 10px 10px 10px;    
     border-radius: 2.5em;
     border: none;
-    background-color: var(--bc-primary);
+    background-color: #E1E1E6;
     cursor: pointer;
     transition: all 0.2s;
     animation: SoundAnimation 200ms 550ms backwards;
@@ -97,7 +100,7 @@ main {
 
 .rangeControl {
     appearance: none;
-    background: #323238;
+    background: #3c3c3f;
     outline: none;
     width: 80%;
     height: 5px;
@@ -112,7 +115,7 @@ main {
     width: 17px;
     height: 17px;
     border-radius: 50%; 
-    background: #323238;
+    background-color: #323238;
     cursor: pointer;
 }
 
@@ -195,6 +198,43 @@ main {
     background: #ffffff;
     cursor: pointer;
 }
+
+/* dark mode */
+.containerSv {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 150px;
+    animation: buttonsAnimation 400ms 850ms backwards;
+}
+
+.background-dark {
+    background-color: #121214;
+    color: white;
+}
+
+.path  {
+    fill: white;
+}
+
+.btn-sounds .darkButton {
+    background-color: #29292E;
+}
+
+.fillColor path {
+    fill: white;
+}
+
+.backgroundRangeControl::-webkit-slider-thumb {
+    background: white;
+}
+
+.backgroundRangeControlWhite {
+    background: white
+}
+
+
+
 
 
 
